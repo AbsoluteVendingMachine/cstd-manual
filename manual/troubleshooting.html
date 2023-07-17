@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+<style>
+    @font-face {
+        font-family:"BIZ UDGothic";
+        src: local("manual/BIZUDGothic-Regular.ttf");
+    }
+    p{font-family:"BIZ UDGothic";}
+    a{font-family:"BIZ UDGothic"}
+    h2{font-family:"BIZ UDGothic"}
+    tr{font-family:"BIZ UDGothic"}
+</style>
+<frame>
+    <p>Cave Story: The Desolate</p>
+    <img src="manual.png" 
+    width="225"
+    height="175"/>
+    <br>
+    <br>
+    <a href="introduction.html">Introduction</a>
+    <br>
+    <br>
+    <a href="display.html">Display</a>
+    <br>
+    <br>
+    <a href="howtoplay.html">How to play | Gameplay</a>
+    <br>
+    <br>
+    <a href="characters.html">Story | Characters</a>
+    <br>
+    <br>
+    <a href="troubleshooting.html">Hardware requirements | Troubleshooting</a>
+    <br>
+    <br>
+    <a href="credits.html">Credits</a>
+</frame>
+<body>
+    <p>Note: If you are using Linux, you shouldn't have to worry about minimum operating system requirement.</p>
+    <h2>Requirements (minimum):</h2>
+    <table bgcolor="black">
+        <tr bgcolor="white">
+            <th>Operating system</th>
+            <th>Windows 7, MacOS 10.12</th>
+        </tr>
+        <tr bgcolor="white">
+            <th>GPU</th>
+            <th>OpenGL 3.3 / OpenGL ES 3.0 compatible hardware</th>
+        </tr>
+        <tr bgcolor="white">
+            <th>RAM</th>
+            <th>2GB</th>
+        </tr>
+        <tr bgcolor="white">
+            <th>Storage</th>
+            <th>300MB</th>
+        </tr>
+    </table>
+    <h2>Recommended:</h2>
+    <table bgcolor="black">
+        <tr bgcolor="white">
+            <th>Operating system</th>
+            <th>Windows 10, MacOS 10.15</th>
+        </tr>
+        <tr bgcolor="white">
+            <th>GPU</th>
+            <th>Vulkan 1.0 compatible hardware</th>
+        </tr>
+        <tr bgcolor="white">
+            <th>RAM</th>
+            <th>4GB</th>
+        </tr>
+        <tr bgcolor="white">
+            <th>Storage</th>
+            <th>300MB</th>
+        </tr>
+    </table>
+    <h2>Troubleshooting</h2>
+    <p style="color: blue;">"My game is constantly lagging / jittering, what do I do?"</p>
+    <p>Try limiting your refresh rate to the game FPS (frames per second). The game is limited to run at 60 FPS, so when running at higher FPS than that, it can cause jitter.</p>
+    <p>If that doesn't work, try running the game in fullscreen / windowed fullscreen, and turning on VSync (not adaptive or mailbox).</p>
+    <img src="nvidia.png">
+    <p>(In the example shown above, in the NVIDIA Control Panel > Display > Change resolution section, my monitor is set to run at 60Hz, which is the maximum refresh rate it can run at. This is good because it matches the FPS of the game. For other graphics cards besides NVIDIA (AMD & Intel) and other operating systems besides Windows (MacOS & Linux), refer to their specific settings to change the refresh rate.)</p>
+    <p style="color: blue;">"My game is having graphical artifacts in the Soap Pools, what do I do?"</p>
+    <p>This is a Godot game engine (4.0.3) issue from my understanding. This may or may not be fixed in a later Godot version (which I will most likely move the project to).</p>
+    <p style="color: blue;">"My save file dissapeared when I selected New on the Title Screen, how can I get it back?"</p>
+    <p>If you haven't pressed New on the Title Screen again after this, and your not on a mobile operating system (i.e. Android since most devices don't have root access) your save file will be located in these locations (according to Godot game engine documentation) in a "save_backup.cfg" file. Delete the current "save.cfg" in that location and rename the "save_backup.cfg" file to "save.cfg".</p>
+    <img src="godot.png">
+    <p style="color: blue;">"I'm getting the error: "Unable to initalize Vulkan video driver". How can I fix this?"</p>
+    <p>This error means that your graphics card driver is too old to support Vulkan. This is because the game runs on the Mobile renderer in Godot, which uses Vulkan. You can still run the game using the OpenGL 3 driver by following the instructions in the error message. The game will work fine except there may be some stutters and missing particles because those effects rely on Vulkan.</p>
